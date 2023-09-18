@@ -22,6 +22,16 @@ jobs:
     - name: Correr pruebas
       id: correr-pruebas
       run: python -m unittest -v tests/test_persona.py
+    - name: Validar resultado con errores
+      if: ${{ failure() }}
+      env:
+        MENSAJE_ERROR: Una o varias pruebas fallaron
+      run: echo "respuesta=${MENSAJE_ERROR}" >>$GITHUB_OUTPUT
+    - name: Validar resultado sin errores
+      if: ${{ success() }}
+      env:
+        MENSAJE_ERROR: Todas las pruebas fueron exitosas
+      run: echo "respuesta=${MENSAJE_EXITO}" >>$GITHUB_OUTPUT
     - name: Cálculo de cubrimiento
       id: cubrimiento
       run:  |
