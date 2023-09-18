@@ -1,4 +1,4 @@
-name: Pruebas unitarias
+name: Pruebas unitarias en OS diferentes
 on:
   push:
     branches: [ main ]
