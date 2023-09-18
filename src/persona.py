@@ -1,5 +1,6 @@
 import datetime
 
+# Clase que representa el objeto persona
 class Persona:
 
    def __init__(self, nombre, edad):

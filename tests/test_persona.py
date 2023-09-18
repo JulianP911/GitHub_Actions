@@ -3,7 +3,7 @@ import datetime
 import numpy
 from src.persona import Persona
 
-
+# Clase que representa los tests para las operaciones con el objeto persona
 class PersonaTestCase(unittest.TestCase):
 
    def setUp(self):
